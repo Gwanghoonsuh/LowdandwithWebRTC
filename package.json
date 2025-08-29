@@ -24,9 +24,9 @@
     "author": "Your Name",
     "license": "MIT",
     "devDependencies": {
-        "concurrently": "^8.2.2"
+        "concurrently": "8.2.2"
     },
     "engines": {
-        "node": ">=16.0.0"
+        "node": "18.x"
     }
 }
