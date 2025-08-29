@@ -1,0 +1,9 @@
+# 안전한 Railway 배포용 Dockerfile
+FROM node:18-alpine
+WORKDIR /app
+COPY . .
+RUN npm install
+RUN cd client-server && npm install
+RUN cd signaling-server && npm install
+EXPOSE 3000
+CMD ["npm", "run", "start:railway"]
