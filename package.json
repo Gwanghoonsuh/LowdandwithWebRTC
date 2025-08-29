@@ -7,6 +7,7 @@
         "start": "concurrently \"npm run start:signaling\" \"npm run start:client\"",
         "start:signaling": "cd signaling-server && npm start",
         "start:client": "cd client-server && npm start",
+        "start:railway": "cd signaling-server && npm start",
         "dev": "concurrently \"npm run dev:signaling\" \"npm run dev:client\"",
         "dev:signaling": "cd signaling-server && npm run dev",
         "dev:client": "cd client-server && npm run dev",
