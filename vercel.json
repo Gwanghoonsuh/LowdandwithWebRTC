@@ -1,0 +1,34 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "client-server/server.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "signaling-server/server.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/signaling/(.*)",
+            "dest": "/signaling-server/server.js"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/client-server/server.js"
+        }
+    ],
+    "env": {
+        "NODE_ENV": "production"
+    },
+    "functions": {
+        "client-server/server.js": {
+            "maxDuration": 30
+        },
+        "signaling-server/server.js": {
+            "maxDuration": 30
+        }
+    }
+}

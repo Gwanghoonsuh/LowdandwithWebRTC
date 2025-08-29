@@ -1,0 +1,31 @@
+{
+    "name": "webrtc-video-conference",
+    "version": "1.0.0",
+    "description": "실시간 화상 회의 WebRTC 애플리케이션",
+    "main": "client-server/server.js",
+    "scripts": {
+        "start": "concurrently \"npm run start:signaling\" \"npm run start:client\"",
+        "start:signaling": "cd signaling-server && npm start",
+        "start:client": "cd client-server && npm start",
+        "dev": "concurrently \"npm run dev:signaling\" \"npm run dev:client\"",
+        "dev:signaling": "cd signaling-server && npm run dev",
+        "dev:client": "cd client-server && npm run dev",
+        "install:all": "npm install && cd signaling-server && npm install && cd ../client-server && npm install",
+        "build": "echo 'No build step required'",
+        "vercel-build": "echo 'No build step required'"
+    },
+    "keywords": [
+        "webrtc",
+        "video-conference",
+        "realtime",
+        "socket.io"
+    ],
+    "author": "Your Name",
+    "license": "MIT",
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    },
+    "engines": {
+        "node": ">=16.0.0"
+    }
+}
